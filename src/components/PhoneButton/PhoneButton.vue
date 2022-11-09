@@ -21,6 +21,10 @@ export default {
   font-size: 18px;
   animation: call 1.5s infinite;
 }
+.btn:hover,
+.btn:active {
+  border: 3px solid $Text-Color;
+}
 @keyframes call {
   15% {
     transform: translate(0px, 0%);

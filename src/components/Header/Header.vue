@@ -3,10 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 text-md-start text-center">
-          <img
-            src="@/Imgs/98958a1d-7255-435d-a2b6-bf79c6ed1797.png"
-            class="py-4"
-          />
+          <a href="#">
+            <img
+              src="@/Imgs/98958a1d-7255-435d-a2b6-bf79c6ed1797.png"
+              class="py-4"
+            />
+          </a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 text-md-end text-center">
           <div class="py-4">

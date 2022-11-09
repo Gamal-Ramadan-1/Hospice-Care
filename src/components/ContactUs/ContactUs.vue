@@ -8,7 +8,7 @@
         </h1>
       </div>
       <div class="row gy-4 py-4">
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6 col-sm-12">
           <h2>
             <i class="fa-solid fa-check"></i>
             No Cost To You, $0 Out of Pocket
@@ -42,14 +42,78 @@
             Difficult Time
           </h2>
         </div>
-        <div class="col-lg-6"></div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <h4 class="text-light text-capitalize">
+            Contact Us to start hospice care
+          </h4>
+          <label class="d-block text-light text-capitalize mt-3"
+            >first name *</label
+          >
+          <input
+            class="d-block form-control py-3 my-3"
+            type="text"
+            placeholder="First Name"
+          />
+          <label class="d-block text-light text-capitalize mt-3"
+            >last name *</label
+          >
+          <input
+            class="d-block form-control py-3 my-3"
+            type="text"
+            placeholder="Last Name"
+          />
+
+          <label class="d-block text-light text-capitalize my-3">phone *</label>
+
+          <vue-tel-input
+            v-model="phone"
+            mode="international"
+            class="border-0"
+          ></vue-tel-input>
+
+          <label class="d-block text-light text-capitalize mt-3">email *</label>
+          <input
+            class="d-block form-control py-3 my-3"
+            type="text"
+            placeholder="Please Double Check Your Email"
+          />
+          <label class="d-block text-light text-capitalize mt-3"
+            >Insurance Provider *</label
+          >
+          <input
+            class="d-block form-control py-3 my-3"
+            type="text"
+            placeholder="Insurance Provider"
+          />
+          <label class="d-block text-light text-capitalize mt-3">
+            how can we help you? *
+          </label>
+          <textarea class="form-control my-3" rows="3"></textarea>
+          <div
+            class="btn git-in-touch text-uppercase text-light fw-bold py-2 mb-2"
+          >
+            get in touch !
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
 <script>
+import { ref } from "vue";
+import { VueTelInput } from "vue-tel-input";
+import "vue-tel-input/dist/vue-tel-input.css";
 export default {
   name: "ContactUs",
+  components: {
+    VueTelInput,
+  },
+  setup() {
+    const phone = ref(null);
+    return {
+      phone,
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -81,6 +145,47 @@ section {
       font-size: 40px;
       color: $Main-Color;
     }
+  }
+  input,
+  textarea {
+    width: 60%;
+    transition: all 0.3s ease-in-out;
+  }
+  input:focus,
+  textarea:focus {
+    background-color: rgb(243, 242, 242);
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  .git-in-touch {
+    width: 60%;
+    background-color: $Main-Color;
+  }
+}
+.vue-tel-input {
+  width: 60%;
+  background-color: white;
+  padding: 13px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+  input,
+  textarea,
+  .vue-tel-input,
+  .git-in-touch {
+    width: 80% !important;
+  }
+}
+@media only screen and (max-width: 426px) {
+  input,
+  textarea,
+  .vue-tel-input,
+  .git-in-touch {
+    width: 100% !important;
   }
 }
 </style>
