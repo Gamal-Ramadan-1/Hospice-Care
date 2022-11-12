@@ -50,47 +50,96 @@
             >first name *</label
           >
           <input
-            class="d-block form-control py-3 my-3"
+            class="d-block form-control py-3 mt-3 first-name"
             type="text"
             placeholder="First Name"
           />
+          <p class="text-capitalize text-danger m-0 first-name">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            first name requird...
+          </p>
+
+          <p class="text-capitalize text-danger m-0 first-name-correct">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            enter your first name correctly
+          </p>
+
           <label class="d-block text-light text-capitalize mt-3"
             >last name *</label
           >
           <input
-            class="d-block form-control py-3 my-3"
+            class="d-block form-control py-3 mt-3 last-name"
             type="text"
             placeholder="Last Name"
           />
+          <p class="text-capitalize text-danger m-0 last-name">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            last name requird...
+          </p>
 
-          <label class="d-block text-light text-capitalize my-3">phone *</label>
+          <p class="text-capitalize text-danger m-0 last-name-correct">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            enter your last name correctly
+          </p>
 
+          <label class="d-block text-light text-capitalize mt-3">phone *</label>
           <vue-tel-input
             v-model="phone"
             mode="international"
-            class="border-0"
+            class="border-0 chose-number"
           ></vue-tel-input>
-
-          <label class="d-block text-light text-capitalize mt-3">email *</label>
+          <label class="d-block text-light text-capitalize mt-3">
+            email *
+          </label>
           <input
-            class="d-block form-control py-3 my-3"
+            class="d-block form-control py-3 mt-3 email"
             type="text"
             placeholder="Please Double Check Your Email"
           />
+          <p class="text-capitalize text-danger m-0 email">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            email requird...
+          </p>
+
+          <p class="text-capitalize text-danger m-0 email-correct">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            enter your email corectly
+          </p>
+
           <label class="d-block text-light text-capitalize mt-3"
             >Insurance Provider *</label
           >
           <input
-            class="d-block form-control py-3 my-3"
+            class="d-block form-control py-3 mt-3 insurance-provider"
             type="text"
             placeholder="Insurance Provider"
           />
+          <p class="text-capitalize text-danger m-0 insurance-provider">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            Insurance Provider requird...
+          </p>
+
+          <p class="text-capitalize text-danger m-0 insurance-provider-correct">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            enter your insurance provider corectly
+          </p>
+
           <label class="d-block text-light text-capitalize mt-3">
             how can we help you? *
           </label>
-          <textarea class="form-control my-3" rows="3"></textarea>
+          <textarea class="form-control mt-3" rows="3"></textarea>
+          <p class="text-capitalize text-danger m-0 message">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            how can we help you? requird...
+          </p>
+          <p class="text-capitalize text-danger m-0 donnot-space">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            don't inter space
+          </p>
+
           <div
-            class="btn git-in-touch text-uppercase text-light fw-bold py-2 mb-2"
+            class="btn git-in-touch text-uppercase text-light fw-bold py-2 mt-4"
+            @click="GitInTouch()"
           >
             get in touch !
           </div>
@@ -100,7 +149,7 @@
   </section>
 </template>
 <script>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { VueTelInput } from "vue-tel-input";
 import "vue-tel-input/dist/vue-tel-input.css";
 export default {
@@ -109,10 +158,83 @@ export default {
     VueTelInput,
   },
   setup() {
+    onMounted(() => {
+      $(".first-name").hide();
+      $(".last-name").hide();
+      $(".phone").hide();
+      $(".email").hide();
+      $(".insurance-provider").hide();
+      $(".message").hide();
+
+      $(".first-name-correct").hide();
+      $(".last-name-correct").hide();
+      $(".phone-correct").hide();
+      $(".email-correct").hide();
+      $(".insurance-provider-correct").hide();
+      $(".donnot-space").hide();
+    });
     const phone = ref(null);
     return {
       phone,
     };
+  },
+  methods: {
+    GitInTouch() {
+      if ($("input.first-name").val() === "") {
+        $("p.first-name").show();
+        $("p.first-name-correct").hide();
+      } else if ($("input.first-name").val() === " ") {
+        $("p.first-name").hide();
+        $("p.first-name-correct").show();
+      } else {
+        $("p.first-name").hide();
+        $("p.first-name-correct").hide();
+      }
+
+      if ($("input.last-name").val() === "") {
+        $("p.last-name").show();
+        $("p.last-name-correct").hide();
+      } else if ($("input.last-name").val() === " ") {
+        $("p.last-name").hide();
+        $("p.last-name-correct").show();
+      } else {
+        $("p.last-name").hide();
+        $("p.last-name-correct").hide();
+      }
+
+      if ($("input.email").val() === "") {
+        $("p.email").show();
+        $("p.email-correct").hide();
+      } else if ($("input.email").val() === " ") {
+        $("p.email").hide();
+        $("p.email-correct").show();
+      } else {
+        $("p.email").hide();
+        $("p.email-correct").hide();
+      }
+
+      if ($("input.insurance-provider").val() === "") {
+        $("p.insurance-provider").show();
+        $("p.insurance-provider-correct").hide();
+      } else if ($("input.insurance-provider").val() === " ") {
+        $("p.insurance-provider").hide();
+        $("p.insurance-provider-correct").show();
+      } else {
+        $("p.insurance-provider").hide();
+        $("p.insurance-provider-correct").hide();
+      }
+
+      if ($("textarea").val() === "") {
+        $("p.message").show();
+        $("p.donnot-space").hide();
+      } else if ($("textarea").val() === " ") {
+        $("p.message").hide();
+        $("p.donnot-space").show();
+      } else {
+        $("p.message").hide();
+        $("p.donnot-space").hide();
+      }
+    },
   },
 };
 </script>
