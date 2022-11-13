@@ -24,7 +24,7 @@
             :key="info"
             class="d-flex align-items-center text-capitalize mb-4"
           >
-            <div v-html="info.icon" class="X-mark me-1"></div>
+            <i v-if="info.icon" class="fa-solid fa-xmark px-2 py-1 X-mark me-1"></i>
             <p class="text-light m-0">
               {{ info.discription }}
             </p>
@@ -49,42 +49,46 @@ export default {
     return {
       infos: [
         {
-          icon: '<i class="fa-solid fa-xmark px-2 py-1"></i>',
+          icon: true,
           discription: "Dealing With The Emotional Burden Of A Loved One",
         },
         {
-          icon: '<i class="fa-solid fa-xmark px-2 py-1"></i>',
+          icon: true,
           discription: "Lack Of Support & Care During This Tough Time",
         },
         {
-          icon: '<i class="fa-solid fa-xmark px-2 py-1"></i>',
+          icon: true,
           discription: "Helping A Loved One With Their Pain",
         },
         {
-          icon: '<i class="fa-solid fa-xmark px-2 py-1"></i>',
+          icon: true,
           discription: "Dealing With A Terminal Illness",
         },
         {
-          icon: '<i class="fa-solid fa-xmark px-2 py-1"></i>',
+          icon: true,
           discription: "Expensive Cost of Healthcare",
         },
         {
-          icon: '<i class="fa-solid fa-xmark px-2 py-1"></i>',
+          icon: true,
           discription: "Everything Else That is stressful...",
         },
         {
+          icon: false,
           discription:
             "Don't worry. Rest easy and let our trusted team take care of everything.",
         },
         {
+          icon: false,
           discription:
             "Get peace of mind with an end-of-life support team, pain management & symptom control, homemaking services, respite care, bereavement support, and spiritual support providers.",
         },
         {
+          icon: false,
           discription:
             "At White Orchid Hospice, you can trust us to alleviate as much pain, worry, and inconvenience from your life as possible if you're faced with the realities of death, illness, and grief.",
         },
         {
+          icon: false,
           discription:
             "At White Orchid Hospice, You Can Trust Us To Alleviate As Much Pain, Worry, And Inconvenience From Your Life As Possible If You're Faced With The Realities Of Death, Illness, And Grief.",
         },
