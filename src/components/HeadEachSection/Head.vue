@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-12 text-center">
+    <div class="col-12 text-center fw-bolder">
       <h1 class="mt-5 mb-3">{{ Text.toUpperCase() }}</h1>
       <div :class="LineColor + ' line'"></div>
     </div>
