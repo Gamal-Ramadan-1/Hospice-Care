@@ -19,7 +19,7 @@
                     <p class="py-1 text-capitalize">{{ Service.Descrption }}</p>
                 </div>
                 <div class="text-center py-4">
-                    <PhoneButton PhoneNumber="(281)688-6783" />
+                    <PhoneButton PhoneNumber="(281)688-6783" Color="text-light" Icon="fa-solid fa-phone"/>
                 </div>
             </div>
         </div>

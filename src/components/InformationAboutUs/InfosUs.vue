@@ -80,10 +80,7 @@
         </div>
       </div>
       <div class="text-center py-4">
-        <div class="btn py-3 px-4">
-          <i class="fa-solid fa-phone me-1"></i>
-          (281)688-6783
-        </div>
+        <PhoneButton PhoneNumber="(281)688-6783" Icon="fa-solid fa-phone"/>
       </div>
     </div>
   </section>
@@ -144,18 +141,10 @@ section {
   }
 }
 
-.btn {
-  border: 3px solid $Text-Color;
-  font-weight: bolder;
-  border-radius: 20px;
-  color: $Text-Color;
-  font-size: 18px;
-  animation: call 1.5s infinite;
-}
-
 .btn:hover,
 .btn:active {
   border: 3px solid $Text-Color;
+  color: $Text-Color;
 }
 
 @keyframes call {

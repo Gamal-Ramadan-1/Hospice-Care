@@ -29,10 +29,12 @@
               {{ info.discription }}
             </p>
           </h3>
-          <div class="text-center">
+          <div class="text-center my-5">
             <PhoneButton
               PhoneNumber="(281)688-6783"
-              class="mt-5 mb-3 d-md-inline-block d-none"
+              class="d-md-inline-block d-none"
+              Color="text-light"
+              Icon="fa-solid fa-phone"
             />
           </div>
         </div>
