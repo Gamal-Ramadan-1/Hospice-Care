@@ -22,9 +22,9 @@
           <h3
             v-for="info in infos"
             :key="info"
-            class="d-flex align-items-center text-capitalize mb-4"
+            class="d-flex align-items-md-center text-capitalize mb-4"
           >
-            <i v-if="info.icon" class="fa-solid fa-xmark px-2 py-1 X-mark me-1"></i>
+            <i v-if="info.icon" class="fa-solid fa-xmark px-2 py-1 X-mark me-1 mt-md-0 mt-1"></i>
             <p class="text-light m-0">
               {{ info.discription }}
             </p>
